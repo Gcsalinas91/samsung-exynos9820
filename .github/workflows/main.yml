@@ -54,9 +54,10 @@ jobs:
         run: |
           set -e -o pipefail
           ./cruelbuild config                    \
+                       os_patch_level=2023-03    \
                        model=${{ matrix.model }} \
                        name="Cruel-v5.3G"        \
-                       toolchain=$TOOLCHAIN      \
+                       toolchain=default         \
                        +magisk=canary            \
                        +nohardening              \
                        +ttl                      \
@@ -64,7 +65,7 @@ jobs:
                        +cifs                     \
                        +sdfat                    \
                        +ntfs                     \
-                       +force_dex_wqhd           \
+                       +dtb                      \
                        +morosound                \
                        +boeffla_wl_blocker       \
           2>&1 | tee config.info
