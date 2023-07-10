@@ -57,7 +57,7 @@ jobs:
                        os_patch_level=2023-03    \
                        model=${{ matrix.model }} \
                        name="Cruel-v5.3G"        \
-                       toolchain=default         \
+                       toolchain=$TOOLCHAIN      \
                        +magisk=canary            \
                        +nohardening              \
                        +ttl                      \
